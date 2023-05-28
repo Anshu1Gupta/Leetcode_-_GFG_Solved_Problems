@@ -15,7 +15,6 @@ public:
         }
        
         for(int i=1;i<n;i++){
-           
             int q=0;
             int p=i;
             while(p<n){
@@ -29,11 +28,7 @@ public:
             }
         }
         
-        if(str.size()==1)return str;
-          string ans;
-       if(ind1==-1||ind2==-1){
-           ans=ans+str[0];
-       }
+        string ans="";
         for(int i=ind1;i<=ind2;i++){
             ans=ans+str[i];
         }
