@@ -1,23 +1,38 @@
 class ParkingSystem {
 public:
-    unordered_map<int,int>mp;
+   int one=0,two=0,three=0;
     ParkingSystem(int big, int medium, int small) {
         if(big){
-            mp[1]+=big;
+           one+=big;
         }
         if(medium){
-            mp[2]+=medium;
+            two+=medium;
         }
         if(small){
-            mp[3]+=small;
+            three+=small;
         }
     }
     
     bool addCar(int carType) {
-        if(mp[carType]!=0){
-            mp[carType]--;return true;
+        if(carType==1){
+            if(one){
+                one--;return true;
+            }
+            else return false;
         }
-        else return false;
+       else if(carType==2){
+            if(two){
+                two--;return true;
+            }
+            else return false;
+        }
+        else if (carType==3){
+            if(three){
+            three--;return true;
+            }
+            else return false;
+        }
+        return false;
     }
 };
 
