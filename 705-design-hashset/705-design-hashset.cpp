@@ -4,23 +4,20 @@ public:
     vector<int>hash;
     MyHashSet() {
        
-        for(int i=0;i<=1000001;i++){
-            hash.push_back(0);
-        }
+       hash.resize(1e6+1,0);
     }
     
     void add(int key) {
-        hash[key]++;
+        hash[key]=1;
     }
     
     void remove(int key) {
-        if(hash[key])hash[key]=0;
+        hash[key]=0;
         
     }
     
     bool contains(int key) {
-        if(hash[key])return true;
-        return false;
+        return hash[key];
     }
 };
 
