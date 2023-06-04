@@ -1,43 +1,42 @@
 class Solution {
 public:
     vector<int> findMinHeightTrees(int n, vector<vector<int>>& edges) {
-        if(n==0)
+        vector<int>indegree(n,0);
+       if(n==0)
             return {};
         if(n==1)
             return {0};
-        vector<int>res;
-        vector<int>degrees(n,0);
-        vector<vector<int>>adj(n);
-        for(int i=0;i<edges.size();i++)
-        {
-            adj[edges[i][0]].push_back(edges[i][1]);//creating adjacent list
-            adj[edges[i][1]].push_back(edges[i][0]);
-            degrees[edges[i][1]]++;//updating how many edges each node has
-            degrees[edges[i][0]]++;
+        vector<int>adj[n];
+       for(auto it :edges){
+           indegree[it[0]]++;
+           indegree[it[1]]++;
+           adj[it[0]].push_back(it[1]);
+           adj[it[1]].push_back(it[0]);
+       }
+        queue<int>q;
+        
+        for(int i=0;i<n;i++){
+            if(indegree[i]==1){
+                q.push(i);
+            }
         }
-        queue<int>queue;
-        for(int i=0;i<n;i++)
-        {
-            if(degrees[i]==1)//adding all the leave nodes
-                queue.push(i);
-        }
-        while(!queue.empty())
-        {
-            res.clear();// clear vector before we start traversing level by level.
-            int size=queue.size();
-            for(int i=0;i<size;i++)
-            {
-                int cur=queue.front();
-                queue.pop();
-                res.push_back(cur);//adding nodes to vector.Goal is to get a vector of  just 1 or 2 nodes available.
-                for(auto &neighbor:adj[cur])
-                {
-                    degrees[neighbor]--;//removing current leave nodes
-                    if(degrees[neighbor]==1)//adding current leave nodes
-                        queue.push(neighbor);
+        while(n>2){
+            int size=q.size();
+            n=n-size;
+            while(size--){
+                int node=q.front();q.pop();
+                for(auto it:adj[node]){
+                    indegree[it]--;
+                    if(indegree[it]==1){
+                        q.push(it);
+                    }
                 }
             }
         }
-        return res;
+        vector<int>ans;
+        while(!q.empty()){
+            ans.push_back(q.front());q.pop();
+        }
+        return  ans;
     }
 };
