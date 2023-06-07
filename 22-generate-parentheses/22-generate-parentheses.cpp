@@ -7,14 +7,11 @@ public:
         }
         if(temp.empty()||open!=0)
         {
-            temp+='(';
-            findOrder(open-1,close,ans,n,temp);
-            temp.pop_back();
+            findOrder(open-1,close,ans,n,temp+'(');
         }
-        if(!temp.empty()&&(close>open)){
-            temp+=')';
-            findOrder(open,close-1,ans,n,temp);
-            temp.pop_back();
+        if(!temp.empty()&&(close>open))
+        {
+            findOrder(open,close-1,ans,n,temp+')');
         }
         
         
