@@ -10,10 +10,11 @@ public:
         }
         int count=0;
         unordered_map<int,int>mp;
-    
+    mp[0]++;
         for(int i=0;i<nums.size();i++){
-            if(prefix[i]==k)count++;
-            if(mp.find(prefix[i]-k)!=mp.end()){
+           
+            if(mp.find(prefix[i]-k)!=mp.end())
+            {
             count+=mp[prefix[i]-k];
             }
             mp[prefix[i]]++;
