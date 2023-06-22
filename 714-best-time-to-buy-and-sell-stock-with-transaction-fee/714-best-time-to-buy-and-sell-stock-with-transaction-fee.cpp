@@ -18,7 +18,7 @@ public:
             return dp[ind][choice]=max(take,ntake);
         }
         // return dp[ind]=max(take,ntake);
-        return dp[ind][choice];
+        // return dp[ind][choice];
     }
     int maxProfit(vector<int>& prices, int fee) {
         int n=prices.size();
