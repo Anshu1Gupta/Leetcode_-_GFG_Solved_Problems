@@ -4,15 +4,15 @@ public:
         if(ind>=prices.size())return 0;
        
         if(dp[ind][choice]!=-1)return dp[ind][choice];
-        
+        int take=0,ntake=0;
         if(choice==1){    
-             int take=0,ntake=0;
+             
             take=-1*prices[ind]+maxprofit(0,ind+1,prices,fee,dp);
             ntake=0+maxprofit(1,ind+1,prices,fee,dp);
             return dp[ind][choice]=max(take,ntake);
         }
         else{
-            int take=0,ntake=0;
+            
             take=prices[ind]-fee+maxprofit(1,ind+1,prices,fee,dp);
             ntake=0+maxprofit(0,ind+1,prices,fee,dp);
             return dp[ind][choice]=max(take,ntake);
