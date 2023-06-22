@@ -1,31 +1,27 @@
 class Solution {
 public:
-    void nways(int i,int target,vector<int>& nums,vector<int>&temp,set<vector<int>>&set){
-        if(i<0){
-            if(target==0){
-                set.insert(temp);
-               
-            }
-             return ;
-        }
-        if(target>=nums[i]){
-          temp.push_back(nums[i]);
-            nways(i,target-nums[i],nums,temp,set);
-            temp.pop_back();
-        }
-        nways(i-1,target,nums,temp,set);
-        
-    }
-    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+void subset(int ind,vector<int>&temp,vector<vector<int>>&ans,int sum,vector<int>&arr,int curr){
+   
+   if(sum==curr){
+       ans.push_back(temp);
+       return;
+   }
+   if(ind>=arr.size())return;
+
+  if(curr<sum){
+   temp.push_back(arr[ind]);
+   subset(ind,temp,ans,sum,arr,curr+arr[ind]);
+   temp.pop_back();
+  }
+   while(ind+1<arr.size()&&arr[ind]==arr[ind+1])ind++;
+   subset(ind+1,temp,ans,sum,arr,curr);
+}
+    vector<vector<int>> combinationSum(vector<int>& arr, int target) {
         vector<vector<int>>ans;
-        int n=candidates.size();
-        set<vector<int>>set;
+        int n=arr.size();
         vector<int>temp;
-        sort(candidates.begin(),candidates.end(),greater<>());
-        nways(n-1,target,candidates,temp,set);
-        for(auto it:set){
-            ans.push_back(it);
-        }
+        sort(arr.begin(),arr.end());
+        subset(0,temp,ans,target,arr,0);
         return ans;
     }
 };
