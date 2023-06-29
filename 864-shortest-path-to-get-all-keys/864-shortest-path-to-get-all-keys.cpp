@@ -51,9 +51,6 @@ public:
                         visited[nx][ny][current_status]=1;
                         q.push({nx,ny,steps+1,current_status});
                     }
-                    
-                    
-                    
                 }
             }
         }
