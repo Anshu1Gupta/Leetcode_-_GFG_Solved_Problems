@@ -32,12 +32,12 @@ public:
                 int nx=x+it.first;
                 int ny=y+it.second;
                 
-                if(nx>=0&&ny>=0&&nx<n&&ny<m&&grid[nx][ny]!='#'){
+                if(nx>=0&&ny>=0&&nx<n&&ny<m&&grid[nx][ny]!='#'&&!visited[nx][ny][current_status]){
                     
                     char ch=grid[nx][ny];
                     
                     if(ch>='A'&&ch<='F'){
-                        if(visited[nx][ny][current_status]==0&&(current_status>>(ch-'A'))&1==1){
+                        if((current_status>>(ch-'A'))&1==1){
                             visited[nx][ny][current_status]=1;
                             q.push({nx,ny,steps+1,current_status}); 
                         }
@@ -45,16 +45,14 @@ public:
                     }
                     else if(ch>='a'&&ch<='f'){
                         int num= current_status|1<<(ch-'a');
-                        if(visited[nx][ny][num]==0){
-                            visited[nx][ny][num]=1;
+                            visited[nx][ny][current_status]=1;
                             q.push({nx,ny,steps+1,num});
-                        }
                     }
                     else{
-                        if(visited[nx][ny][current_status]==0){
-                            visited[nx][ny][current_status]=1;
+                      
+                        visited[nx][ny][current_status]=1;
                         q.push({nx,ny,steps+1,current_status});
-                        }
+                        
                         
                     }
                     
