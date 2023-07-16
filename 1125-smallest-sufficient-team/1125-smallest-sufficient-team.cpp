@@ -14,7 +14,7 @@ public:
         string rem=to_string(ind)+':'+to_string(mask);
         
         if(dp.find(rem)!=dp.end()){
-            if(dp[rem]<=temp.size())return;
+           if(dp[rem]<=temp.size()) return;
         }
         
         
