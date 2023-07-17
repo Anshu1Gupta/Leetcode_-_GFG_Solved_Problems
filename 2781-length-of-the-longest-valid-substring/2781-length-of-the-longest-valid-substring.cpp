@@ -8,8 +8,6 @@ public:
             int len=it.length();
             maxLen=max(maxLen,len);
         }
-        
-        
         int ans=0,start=0,end=0,n=word.length();
         
         while(end<n){
