@@ -10,7 +10,6 @@ public:
         }
         int ans=0,start=0,end=0,n=word.length();
         while(end<n){
-            
             int i=end;
             string temp;
             for(;i>=start&&i>(end-maxLen);i--){
@@ -20,7 +19,6 @@ public:
                     break;
                 }
             }
-            
             ans=max(ans,end-start+1);
             end++;
         }
