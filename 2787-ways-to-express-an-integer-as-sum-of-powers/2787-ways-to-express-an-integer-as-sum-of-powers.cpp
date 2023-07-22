@@ -27,30 +27,7 @@ public:
     }
     int numberOfWays(int n, int x) {
         
-      vector<vector<long long >>dp(300+10,vector<long long >(300+10,-1));
+      vector<vector<long long >>dp(301,vector<long long >(300+10,-1));
       return maxNo(1,n,x,dp);
     }
 };
-// class Solution {
-// public:
-//     int MOD=(int)(1e9+7);
-    
-//     int findWays(int index,int num,int x,vector<vector<int>>&dp){
-//         if(index<0) return 0;
-//         if(index==0) return 1;
-//         if(pow(num,x)>index) return 0;
-//         if(dp[index][num]!=-1) return dp[index][num];
-        
-//         int temp=pow(num,x);
-        
-//         int notTaken=findWays(index-temp,num+1,x,dp);
-//         int taken=findWays(index,num+1,x,dp);
-        
-//         return dp[index][num]=(notTaken%MOD+taken%MOD)%MOD;
-//     }
-    
-//     int numberOfWays(int n, int x) {
-//         vector<vector<int>>dp(n+1,vector<int>(n+1,-1));
-//         return findWays(n,1,x,dp);
-//     }
-// };
