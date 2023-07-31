@@ -26,9 +26,9 @@ public:
         
         int take1=str1[ind1]+minValue(ind1-1,ind2,str1,str2,n,m,dp);
         int take2=str2[ind2]+minValue(ind1,ind2-1,str1,str2,n,m,dp);
-        int take3=str1[ind1]+str2[ind2]+minValue(ind1-1,ind2-1,str1,str2,n,m,dp);
+        // int take3=str1[ind1]+str2[ind2]+minValue(ind1-1,ind2-1,str1,str2,n,m,dp);
         
-        return dp[ind1][ind2]=min({take1,take2,take3});
+        return dp[ind1][ind2]=min({take1,take2});
         
         
     }
