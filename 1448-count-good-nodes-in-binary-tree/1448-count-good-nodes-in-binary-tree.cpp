@@ -11,25 +11,23 @@
  */
 class Solution {
 public:
-    
-    void findGood(TreeNode*root,int maxi,unordered_map<TreeNode*,int>&mp){
+    int ans=0;
+    void findGood(TreeNode*root,int maxi){
         if(root==NULL){
            return; 
         }
         if(root->val>=maxi){
-            if(mp.find(root)==mp.end()){
-                mp[root]++;
-            }
+           ans++;
         }
         
-        findGood(root->left,max(maxi,root->val),mp);
-        findGood(root->right,max(maxi,root->val),mp);
+        findGood(root->left,max(maxi,root->val));
+        findGood(root->right,max(maxi,root->val));
     }
     int goodNodes(TreeNode* root) {
       
         if(root==NULL)return 0;
         unordered_map<TreeNode*,int>mp;
-        findGood(root,root->val,mp);
-        return mp.size();
+        findGood(root,root->val);
+        return ans;
     }
 };
