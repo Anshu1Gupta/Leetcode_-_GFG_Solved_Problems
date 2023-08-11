@@ -11,8 +11,7 @@ class Solution
     //Function to find length of longest increasing subsequence.
     int longestSubsequence(int n, int a[])
     {
-       // your code here
-    vector<int>ans;
+        vector<int>ans;
      for(int i=0;i<n;i++){
         int ind=lower_bound(ans.begin(),ans.end(),a[i])-ans.begin();
         if(ind==ans.size()){
@@ -23,6 +22,7 @@ class Solution
         }
      }
      return ans.size();
+       // your code here
     }
 };
 
