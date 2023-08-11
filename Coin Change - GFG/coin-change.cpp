@@ -5,27 +5,8 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-long long int ans(int *coins,int ind,int target, vector<vector<long long int>>&dp){
-   if(ind==0)
-   {
-      return (target%coins[0]==0);
-   }
-      if(dp[ind][target]!=-1)return dp[ind][target];
-      
-      
-      long long int ntake=ans(coins,ind-1,target,dp);
-      
-      
-      long long int take=0;
-      if(coins[ind]<=target){
-          take=ans(coins,ind,target-coins[ind],dp);
-      }
-      
-      return dp[ind][target]=take+ntake;
-  }
-
     long long int count(int coins[], int N, int sum) {
-      vector<vector<long long int>>dp(N,vector<long long int>(sum+1,0));
+ vector<vector<long long int>>dp(N,vector<long long int>(sum+1,0));
       
       for(int i=0;i<=sum;i++){
          if(i%coins[0]==0)
@@ -45,7 +26,6 @@ long long int ans(int *coins,int ind,int target, vector<vector<long long int>>&d
       }
       
       return dp[N-1][sum];
-    //   return ans(coins,N-1,sum,dp);
         // code here.
     }
 };
