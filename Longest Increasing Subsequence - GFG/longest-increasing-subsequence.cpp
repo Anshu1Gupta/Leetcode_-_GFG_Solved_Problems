@@ -8,23 +8,11 @@ using namespace std;
 class Solution
 {
     public:
-    int longest(int ind,int arr[],vector<int>&dp){
-        
-        int ans=1;
-        
-        if(dp[ind]!=-1)return dp[ind];
-        for(int i=0;i<ind;i++){
-            if(arr[i]<arr[ind]){
-                ans=max(ans,1+longest(i,arr,dp));
-            }
-        }
-        return dp[ind]=ans;
-    }
     //Function to find length of longest increasing subsequence.
     int longestSubsequence(int n, int a[])
     {
+       // your code here
     vector<int>ans;
-    
      for(int i=0;i<n;i++){
         int ind=lower_bound(ans.begin(),ans.end(),a[i])-ans.begin();
         if(ind==ans.size()){
