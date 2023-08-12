@@ -10,7 +10,7 @@ class Solution {
   int mod=1e9+7;
     int nthFibonacci(int n){
         // code here
-          if(n==1)return 0;
+         if(n==1)return 0;
         if(n==2)return 1;
         int prev=1;
         int sum=1;
