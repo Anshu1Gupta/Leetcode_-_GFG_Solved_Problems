@@ -11,7 +11,7 @@ class Solution
     {
         //code here
         int MOD=1e9+7;
-         vector<int>catalan(n+1);
+        vector<int>catalan(n+1);
         catalan[0]=1,catalan[1]=1;
         for (int i=2; i<=n; i++) {
         catalan[i] = 0;
