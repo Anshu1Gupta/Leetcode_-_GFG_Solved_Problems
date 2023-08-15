@@ -9,8 +9,8 @@ class Solution{
     public:
     int maxOnes(int a[], int n)
     {
-        
-      int count=0;
+        // Your code goes here
+          int count=0;
       int flips=0;
       int ones=0;
       
@@ -30,9 +30,6 @@ class Solution{
       }
       return ones+flips;
       
-        
-        
-        
     }
 };
 
