@@ -11,18 +11,13 @@ public:
 	/* if x is present in arr[] then returns the count
 		of occurrences of x, otherwise returns 0. */
 	int count(int arr[], int n, int x) {
-	    
-	    
 	    int low=0;
 	    int high=n-1;
-	    
 	    while(low<=high){
 	        int mid=(low+high)/2;
-	        
 	        if(arr[mid]>=x)high=mid-1;
 	        else low=mid+1;
 	    }
-	    
 	    int low2=0;
 	    int high2=n-1;
 	    while(low2<=high2){
@@ -30,7 +25,6 @@ public:
 	        if(arr[mid2]<=x)low2=mid2+1;
 	        else high2=mid2-1;
 	    }
-	    
 	    return low2-low;
 	}
 };
