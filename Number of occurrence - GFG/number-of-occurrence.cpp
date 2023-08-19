@@ -11,6 +11,7 @@ public:
 	/* if x is present in arr[] then returns the count
 		of occurrences of x, otherwise returns 0. */
 	int count(int arr[], int n, int x) {
+	    // code here
 	    int low=0;
 	    int high=n-1;
 	    while(low<=high){
@@ -25,6 +26,7 @@ public:
 	        if(arr[mid2]<=x)low2=mid2+1;
 	        else high2=mid2-1;
 	    }
+	   // cout<<low2<<' '<<low<<endl;
 	    return low2-low;
 	}
 };
