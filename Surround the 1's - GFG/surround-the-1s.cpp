@@ -9,7 +9,7 @@ class Solution {
 public:
     int Count(vector<vector<int> >& matrix) {
         // Code here
-        vector<pair<int,int>>dir{{-1,0},{0,-1},{1,0},{0,1},{-1,-1},{1,1},{1,-1},{-1,1}};
+       vector<pair<int,int>>dir{{-1,0},{0,-1},{1,0},{0,1},{-1,-1},{1,1},{1,-1},{-1,1}};
        int n=matrix.size();
        int m=matrix[0].size();
        int count=0;
