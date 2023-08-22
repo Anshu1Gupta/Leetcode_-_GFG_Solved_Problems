@@ -12,7 +12,8 @@ class Solution
     //to make the matrix beautiful.
     int findMinOpeartion(vector<vector<int> > matrix, int n)
     {
-        vector<int>ans;
+        // code here 
+         vector<int>ans;
         for(int i=0;i<n;i++){
             int sum=0;
             for(int j=0;j<n;j++){
@@ -36,7 +37,7 @@ class Solution
             res+=(maxi-ans[i]);
         }
         return res/2;
-        } 
+    } 
 };
 
 //{ Driver Code Starts.
