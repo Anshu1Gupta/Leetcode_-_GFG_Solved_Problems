@@ -16,12 +16,45 @@ public:
             int ntake=0+maxiProfit(ind+1,k,turn,prices,dp);
             return dp[ind][turn][k]=max(take,ntake);
         }
-        
-        
     }
     int maxProfit(int k, vector<int>& prices) {
         int n=prices.size();
-        vector<vector<vector<int> > > dp(n+1, vector<vector<int>>(4, vector<int>(k+1, -1)));
-        return maxiProfit(0,k,0,prices,dp);
+        vector<vector<vector<int> > > dp(n+1, vector<vector<int>>(4, vector<int>(k+1, 0)));
+        // return maxiProfit(0,k,0,prices,dp);
+      
+     
+        for(int ind=n-1;ind>=0;ind--){
+            for(int turn=0;turn<=1;turn++){
+                for(int x=1;x<=k;x++){
+                    
+                    if(turn==0){
+                         int take=-prices[ind]+dp[ind+1][!turn][x];
+                         int ntake=0+dp[ind+1][turn][x];;
+                        dp[ind][turn][x]=max(take,ntake);
+                    }
+                    else{
+                        int take=prices[ind]+dp[ind+1][!turn][x-1];;
+                         int ntake=0+dp[ind+1][turn][x];
+                        dp[ind][turn][x]=max(take,ntake);
+                    }
+                }
+            }
+        }
+        return dp[0][0][k];
+
+        // for(int i=n-1; i>=0; i--){
+        //     for(int j=0; j<2; j++){
+        //         for(int x=1; x<k+1; x++){
+        //             if(j==1){
+        //                 dp[i][j][x]=max((-1)*prices[i]+dp[i+1][0][x], dp[i+1][j][x]);
+        //             }
+        //             else{
+        //                 dp[i][j][x]=max(prices[i]+dp[i+1][1][x-1], dp[i+1][j][x]);
+        //             }
+        //         }
+        //     }
+        // }
+        // return dp[0][1][k];
+
     }
 };
