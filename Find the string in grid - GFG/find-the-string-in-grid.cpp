@@ -5,8 +5,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
 public:
-// vector<pair<int,int>>dir{{-1,0},{0,-1},{1,0},{0,1},{-1,-1},{1,1},{-1,1},{1,-1}};
- bool findAll(int i,int j,string &word,vector<vector<char>>&grid){
+	  bool findAll(int i,int j,string &word,vector<vector<char>>&grid){
     int n=grid.size(),m=grid[0].size();
     // int k=0;
    
