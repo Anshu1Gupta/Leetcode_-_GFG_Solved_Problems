@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
 public:
-	  bool findAll(int i,int j,string &word,vector<vector<char>>&grid){
+ bool findAll(int i,int j,string &word,vector<vector<char>>&grid){
     int n=grid.size(),m=grid[0].size();
     // int k=0;
    
