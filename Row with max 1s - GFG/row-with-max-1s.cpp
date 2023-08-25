@@ -22,14 +22,24 @@ public:
       return n-low;
   }
 	int rowWithMax1s(vector<vector<int> > arr, int n, int m) {
-	    int maxi=0;
+	    int i=0;
+	    int j=m-1;
 	    int ind=-1;
-	    for(int i=0;i<n;i++){
-	        int val=findOne(arr[i]);
-	       if(maxi<val){
-	           ind=i;
-	           maxi=val;
-	       }
+	    int maxi=1e9;
+	    while(i<n&&m>=0){
+	        if(arr[i][j]==1){
+	            j--;
+	            if(j<maxi){
+	            maxi=j;
+	            ind=i;
+	        }
+	        }
+	        else{
+	            i++;
+	        }
+	        
+	        
+	        
 	    }
 	    return ind;
 	}
