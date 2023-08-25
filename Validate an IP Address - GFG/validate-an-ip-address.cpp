@@ -10,37 +10,28 @@ You are required to complete this method */
 class Solution {
     public:
         int isValid(string s) {
-           queue<char>q;
+           string str;
            int count=0;
            for(int i=0;i<s.length();i++)
            {
-               if(s[i]=='.'){
+               if(s[i]=='.')
+               {
                    count++;
-                   if(q.size()>=4||(q.size()>=2&&q.front()=='0'))return 0;
+                   if(str.size()>=4||(str.size()>=2&&str[0]=='0'))return 0;
+                   if(str.empty())return 0;
                    
-                   string str;
-                   while(!q.empty()){
-                      str+=q.front();q.pop();
-                   }
-                    if(str.empty())return 0;
                    int num=stoi(str);
                    if(num>255)return 0;
+                   str="";
                    
                }
-               else{
+               else
+               {
                    if(!(s[i]>='0'&&s[i]<='9'))return 0;
-                   q.push(s[i]);
+                  str+=s[i];
                }
-               
            }
-           if(q.size()>=4||(q.size()>=2&&q.front()=='0'))return 0;
-                   
-                   string str;
-                   while(!q.empty())
-                   {
-                      str+=q.front();q.pop();
-                   }
-                   
+           if(str.size()>=4||(str.size()>=2&&str[0]=='0'))return 0;
                    if(str.empty())return 0;
                    int num=stoi(str);
                    if(num>255)return 0;
