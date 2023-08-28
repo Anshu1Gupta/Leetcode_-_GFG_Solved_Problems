@@ -46,7 +46,7 @@ struct Node
 class Solution
 {
     public:
-    Node* reverse(Node*head){
+   Node* reverse(Node*head){
         Node*p=NULL,*q=NULL,*r=head;
         while(r!=NULL){
             p=q;
@@ -81,7 +81,6 @@ class Solution
        ans=reverse(ans);
        return ans;
     }
-    
 };
    
 
