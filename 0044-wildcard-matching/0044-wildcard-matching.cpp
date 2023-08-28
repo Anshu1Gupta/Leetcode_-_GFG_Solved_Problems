@@ -17,9 +17,10 @@ public:
         }
         
         if(str2[ind2]=='*'){
-            for(int i=ind1;i>=-1;i--){
-                if(ifMatched(i,ind2-1,str1,str2,dp))return dp[ind1][ind2]=true;
-            }
+            return dp[ind1][ind2]=ifMatched(ind1,ind2-1,str1,str2,dp)|ifMatched(ind1-1,ind2,str1,str2,dp);
+            // for(int i=ind1;i>=-1;i--){
+                // if(ifMatched(i,ind2-1,str1,str2,dp))return dp[ind1][ind2]=true;
+            // }
         }
         
         return dp[ind1][ind2]=false;
