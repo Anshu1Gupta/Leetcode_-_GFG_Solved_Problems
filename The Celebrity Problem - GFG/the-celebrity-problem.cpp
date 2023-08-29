@@ -18,7 +18,7 @@ class Solution
            
            int count=0;
            for(int row=0;row<n;row++){
-               if(row!=col)
+            //   if(row!=col)
                if(M[row][col]==1)count++;
            }
            
