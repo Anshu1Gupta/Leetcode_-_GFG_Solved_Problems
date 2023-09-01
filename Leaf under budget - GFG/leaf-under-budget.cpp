@@ -116,8 +116,7 @@ class Solution
 public:
     int getCount(Node *root, int k)
     {
-        //code here
-       queue<Node*>q;
+        queue<Node*>q;
        int ans=0;
        q.push(root);
        int level=0;
@@ -137,6 +136,7 @@ public:
            }
        }
        return ans;
+        //code here
     }
 };
 
