@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution{
 public:
-vector<pair<int,int>>dir{{-1,0},{0,-1},{0,1},{1,0}};
+   vector<pair<int,int>>dir{{-1,0},{0,-1},{0,1},{1,0}};
     vector<vector<char>> fill(int n, int m, vector<vector<char>> mat)
     {
         // code here
