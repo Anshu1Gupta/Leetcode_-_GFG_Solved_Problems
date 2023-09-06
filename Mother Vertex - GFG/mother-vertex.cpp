@@ -36,7 +36,6 @@ class Solution
 	   
 	}
 
-
 };
 
 //{ Driver Code Starts.
