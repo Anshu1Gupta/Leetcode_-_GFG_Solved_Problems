@@ -111,7 +111,7 @@ class Solution{
   public:
     // The given root is the root of the Binary Tree
     // Return the root of the generated BST
-   void inorder(Node*root,vector<int>&arr){
+    void inorder(Node*root,vector<int>&arr){
         if(root==NULL)return;
         
         inorder(root->left,arr);
