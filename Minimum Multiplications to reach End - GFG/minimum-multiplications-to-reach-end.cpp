@@ -24,7 +24,6 @@ class Solution {
             int level=q.front().second;
             
             q.pop();
-            
             for(auto it:arr){
                 int num=(it*node)%mod;
                 
