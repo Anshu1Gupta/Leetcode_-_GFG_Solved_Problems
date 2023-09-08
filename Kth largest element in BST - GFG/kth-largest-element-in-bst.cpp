@@ -97,7 +97,7 @@ struct Node {
 class Solution
 {
     public:
-    int MorrisTraversal(Node*root){
+     int MorrisTraversal(Node*root){
 Node*curr=root;
 int count=0;
 while(curr!=NULL){
@@ -153,8 +153,7 @@ int kthLargest(Node *root, int K)
      if(K==0)ans=curr->data;
    }
  return ans;
-}
-
+    }
 };
 
 //{ Driver Code Starts.
