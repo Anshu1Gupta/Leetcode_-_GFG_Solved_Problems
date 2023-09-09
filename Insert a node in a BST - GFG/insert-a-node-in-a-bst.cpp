@@ -35,7 +35,7 @@ struct Node {
 class Solution
 {
     public:
-        bool checkPresence(Node*node,int data){
+       bool checkPresence(Node*node,int data){
             Node*curr=node;
             while(curr!=NULL){
                 if(curr->data==data)return true;
