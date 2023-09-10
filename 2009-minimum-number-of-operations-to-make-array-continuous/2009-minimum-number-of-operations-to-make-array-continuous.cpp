@@ -17,7 +17,7 @@ public:
         
         int nS=ans.size();
         
-        for(int left=0;left<n;left++){
+        for(int left=0;left<nS;left++){
             while(right<nS&&(ans[right]-ans[left]<=n-1))right++;
             
             int curr=right-left;
