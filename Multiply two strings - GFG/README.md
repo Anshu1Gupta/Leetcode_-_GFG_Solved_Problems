@@ -1,6 +1,6 @@
 # Multiply two strings
 ## Medium
-<div class="problems_problem_content__Xm_eO"><p><span style="font-size: 14pt;">Given two numbers as strings s1 and s2. Calculate their Product.<br><br><strong>Note:</strong> The numbers can be negative and<strong>&nbsp;</strong>You are not allowed to use any built-in function or convert the strings to integers. There can be zeros in the begining of the numbers.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size: 14pt;">Given two numbers as strings s1 and s2. Calculate their Product.<br><br><strong>Note:</strong> The numbers can be negative and<strong>&nbsp;</strong>You are not allowed to use any built-in function or convert the strings to integers. There can be zeros in the begining of the numbers. You don't need to specify '+' sign in the begining of positive numbers.</span></p>
 <p><span style="font-size: 14pt;"><strong>Example 1:</strong></span></p>
 <pre><span style="font-size: 14pt;"><strong>Input:
 </strong><strong>s1 =</strong> "0033"
