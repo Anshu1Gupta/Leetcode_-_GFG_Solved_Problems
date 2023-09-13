@@ -11,7 +11,7 @@ class Solution{
 public:
     string findLargest(int N, int S){
         // code here
-        if(S==0&&N==1)return "0";
+       if(S==0&&N==1)return "0";
        if(S==0&&N>1)return "-1";
        
        if(S<=9){
