@@ -14,7 +14,7 @@ class Solution
     //Function to return list containing first n fibonacci numbers.
     vector<long long> printFibb(int n) 
     {
-      if(n==1)return {1};
+        if(n==1)return {1};
       if(n==2)return {1,1};
       
       vector<long long>ans;
