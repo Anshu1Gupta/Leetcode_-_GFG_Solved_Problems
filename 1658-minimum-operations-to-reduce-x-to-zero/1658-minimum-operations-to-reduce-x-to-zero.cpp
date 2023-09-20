@@ -1,34 +1,43 @@
 class Solution {
 public:
     int minOperations(vector<int>& nums, int x) {
+        
+        
         int sum=0;
         for(int i=0;i<nums.size();i++){
             sum+=nums[i];
         }
         
-        unordered_map<int,int>mp;
-        mp[0]=-1;
-        int temp=0;
         int target=sum-x;
-        int maxi=-1;
+        if(target==0)return nums.size();
+        if(target<0)return -1;
         
-        for(int i=0;i<nums.size();i++){
-            temp+=nums[i];
+        
+        int miniOp=INT_MAX;
+        int left=0;
+        int right=0;
+        
+        int currSum=0;
+        int n=nums.size();
+        while(right<n){
+            currSum+=nums[right];
             
-            if(mp.find(temp-target)!=mp.end()){
-                int  length=(i-mp[temp-target]);
-                maxi=max(length,maxi);
+            while(currSum>target){
+                currSum-=nums[left];
+                left++;
             }
             
-            if(mp.find(temp)==mp.end()){
-                mp[temp]=i;
+            if(currSum==target){
+                int length=right-left+1;
+                miniOp=min(miniOp,n-length);
             }
+            right++;
         }
         
+        if(miniOp==INT_MAX)return -1;
+        return miniOp;
         
-        int n=nums.size();
-        if(target==0)return n;
-        if(maxi==-1)return -1;
-        return n-maxi;
+        
+        
     }
 };
