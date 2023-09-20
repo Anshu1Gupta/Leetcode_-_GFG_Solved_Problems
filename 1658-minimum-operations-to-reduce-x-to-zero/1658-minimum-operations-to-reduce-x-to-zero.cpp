@@ -7,12 +7,9 @@ public:
         for(int i=0;i<nums.size();i++){
             sum+=nums[i];
         }
-        
         int target=sum-x;
         if(target==0)return nums.size();
         if(target<0)return -1;
-        
-        
         int miniOp=INT_MAX;
         int left=0;
         int right=0;
@@ -21,12 +18,10 @@ public:
         int n=nums.size();
         while(right<n){
             currSum+=nums[right];
-            
             while(currSum>target){
                 currSum-=nums[left];
                 left++;
             }
-            
             if(currSum==target){
                 int length=right-left+1;
                 miniOp=min(miniOp,n-length);
