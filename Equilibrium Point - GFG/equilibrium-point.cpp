@@ -12,7 +12,7 @@ class Solution{
     int equilibriumPoint(long long a[], int n) {
     
         // Your code here
-        int sum=0;
+         int sum=0;
         for(int i=0;i<n;i++)sum+=a[i];
         int temp=0;
         
