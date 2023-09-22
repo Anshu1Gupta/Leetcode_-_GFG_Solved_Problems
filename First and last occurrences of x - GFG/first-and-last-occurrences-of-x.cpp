@@ -8,7 +8,8 @@ class Solution
     public:
     vector<int> find(int arr[], int n , int x )
     {
-      int first=-1;
+    
+        int first=-1;
         int second=-1;
         
         int low=0,high=n-1;
@@ -43,7 +44,6 @@ class Solution
         if(flag==0)return {-1,-1};
         
         return {first,second};
-        // code here
     }
 };
 
