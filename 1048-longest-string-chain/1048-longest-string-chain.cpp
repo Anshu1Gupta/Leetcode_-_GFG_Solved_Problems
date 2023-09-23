@@ -34,8 +34,18 @@ public:
         
         sort(words.begin(),words.end(),cmp);
         int n=words.size();
-        
-        vector<vector<int>>dp(n+3,vector<int>(n+1,-1));
-        return longest(-1,0,words,dp);
+        // vector<vector<int>>dp(n+3,vector<int>(n+1,1));
+        vector<int>dp(n+1,1);
+        // return longest(-1,0,words,dp);
+        int maxi=1;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<i;j++){
+                if(checkPred(j,i,words)&&dp[j]+1>dp[i]){
+                    dp[i]=dp[j]+1;
+                    maxi=max(maxi,dp[i]);
+                }
+            }
+        }
+        return maxi;
     }
 };
