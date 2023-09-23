@@ -34,9 +34,12 @@ public:
         
         sort(words.begin(),words.end(),cmp);
         int n=words.size();
+        //Recursive Solution
         // vector<vector<int>>dp(n+3,vector<int>(n+1,1));
-        vector<int>dp(n+1,1);
         // return longest(-1,0,words,dp);
+        
+        //Iterative Solution
+        vector<int>dp(n+1,1);
         int maxi=1;
         for(int i=0;i<n;i++){
             for(int j=0;j<i;j++){
