@@ -39,9 +39,9 @@ class Solution{
                     }
                 }
             
-            while(j<(arr.size()-1)&&arr[j]==arr[j+1])j++;
+            while(j<(n-1)&&arr[j]==arr[j+1])j++;
             }
-            while(i<(arr.size()-1)&&arr[i]==arr[i+1])i++;
+            while(i<(n-1)&&arr[i]==arr[i+1])i++;
             
         }
         return ans;
