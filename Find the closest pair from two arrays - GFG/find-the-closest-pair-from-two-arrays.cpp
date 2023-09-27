@@ -10,7 +10,7 @@ class Solution{
   public:
     vector<int> printClosest(int arr[], int brr[], int n, int m, int x) {
         //code here
-         int first=0;
+        int first=0;
         int last=m-1;
          int l1=-1;
          int r2=-1;
