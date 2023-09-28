@@ -10,9 +10,9 @@ using namespace std;
 
 class Solution {
   public:
-
-  
-int bfs(int sr,int sc, vector<vector<int>>&visited,vector<vector<int>>& grid){
+    // int numberOfEnclaves(vector<vector<int>> &grid) {
+        // Code here
+        int bfs(int sr,int sc, vector<vector<int>>&visited,vector<vector<int>>& grid){
     queue<pair<int,int>>q;
      int n=grid.size();
         int m=grid[0].size();
@@ -71,10 +71,8 @@ int sum=0;
         }
     
         return sum;
-        
     }
 };
-
 
 
 //{ Driver Code Starts.
