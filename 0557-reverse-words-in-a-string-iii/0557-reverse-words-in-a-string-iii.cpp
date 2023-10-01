@@ -1,6 +1,5 @@
 class Solution {
 public:
-
     string reverseWords(string s) {
         int start=0;
         int i=0;
@@ -13,5 +12,4 @@ public:
         reverse(s.begin()+start,s.begin()+i);
          return s;
     }
-   
 };
