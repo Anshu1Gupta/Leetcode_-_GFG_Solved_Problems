@@ -1,9 +1,5 @@
 class Solution {
 public:
-bool space(char c){
-    if(c==' ')return true;
-    else return false;
-}
 
     string reverseWords(string s) {
         int start=0;
