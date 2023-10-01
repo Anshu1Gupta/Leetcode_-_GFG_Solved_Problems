@@ -13,7 +13,6 @@ class Solution
     {
         // code here
         vector<int>ans;
-        
         int up=0,down=n-1,left=0,right=m-1;
         
         for(int i=left;i<=right;i++)ans.push_back(matrix[up][i]);
@@ -34,8 +33,6 @@ class Solution
         }
       
         return ans;
-        
-        
     }
 };
 
