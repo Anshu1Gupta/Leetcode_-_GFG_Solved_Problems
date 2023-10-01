@@ -9,7 +9,7 @@ bool space(char c){
         int start=0;
         int i=0;
         for(;i<s.length();i++){
-            if(space(s[i])){
+            if(s[i]==' '){
                 reverse(s.begin()+start,s.begin()+i);
                 start=i+1;
             }
