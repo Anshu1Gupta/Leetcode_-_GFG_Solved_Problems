@@ -10,8 +10,8 @@ class Solution{
   public:	
 	int distinctSubsequences(string s)
 	{
-	    
-	    int n=s.size();
+	    // Your code goes here
+	      int n=s.size();
 	    unordered_map<char,int>mp;
 	    vector<int>dp(n+1,0);
 	    
@@ -29,8 +29,6 @@ class Solution{
 	    }
 	    
 	    return dp[n];
-	    
-	    // Your code goes here
 	}
 };
 
