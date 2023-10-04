@@ -10,7 +10,7 @@ using namespace std;
 
 class Solution {
   public:
-   
+    
 int convert(char ch){
     if(ch=='I')return 1;
     if(ch=='V')return 5;
