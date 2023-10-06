@@ -75,6 +75,7 @@ void insert()
 */
 class Solution
 {
+    public:
     struct Node*reverse(struct Node*head){
         struct Node*p=NULL,*q=NULL,*r=head;
         
