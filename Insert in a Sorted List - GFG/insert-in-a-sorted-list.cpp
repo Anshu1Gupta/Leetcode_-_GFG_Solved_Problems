@@ -45,7 +45,7 @@ class Solution{
     // Should return head of the modified linked list
     Node *sortedInsert(struct Node* head, int data) {
         // Code here
-         Node* n=new Node(data);
+        Node* n=new Node(data);
         if(head->data>=data){
           n->next=head;
           return n;
@@ -63,6 +63,7 @@ class Solution{
             n->next=second;
          
          return head;
+        
         
     }
 };
