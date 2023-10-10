@@ -175,7 +175,6 @@ void mark_parent(Node*root,unordered_map<Node*,Node*>&parent_update){
     }
 };
 
-
 //{ Driver Code Starts.
 
 int main()
