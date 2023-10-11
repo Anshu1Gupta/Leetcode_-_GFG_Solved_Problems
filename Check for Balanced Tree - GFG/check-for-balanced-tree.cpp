@@ -103,6 +103,8 @@ struct Node
 
 class Solution{
     public:
+    //Function to check whether a binary tree is balanced or not.
+    // public:
    int height(Node*root){
    if(root==NULL){
        return 0;
@@ -127,7 +129,6 @@ class Solution{
        return check(root);
     }
 };
-
 
 
 //{ Driver Code Starts.
