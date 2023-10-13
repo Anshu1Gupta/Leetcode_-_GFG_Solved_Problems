@@ -23,7 +23,7 @@ class Solution{
 public:
     int floor(Node* root, int x) {
         // Code here
-        int ans=-1;
+           int ans=-1;
         
         while(root){
             if(root->data>x){
