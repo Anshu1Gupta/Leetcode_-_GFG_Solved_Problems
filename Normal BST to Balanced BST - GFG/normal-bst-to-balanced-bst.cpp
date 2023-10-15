@@ -25,6 +25,7 @@ struct Node
 };
 */
 
+// class Solution{
 class Solution{
     
     public:
@@ -58,7 +59,6 @@ class Solution{
     	return buildtree(v, 0, v.size()-1);
     }
 };
-
 
 //{ Driver Code Starts.
 
