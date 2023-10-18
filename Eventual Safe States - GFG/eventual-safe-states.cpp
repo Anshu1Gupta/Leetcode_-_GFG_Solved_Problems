@@ -9,7 +9,8 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
-    bool dfs(int u,int V,vector<int>adj[],vector<int>&path,int visited[],int check[]){
+  public:
+     bool dfs(int u,int V,vector<int>adj[],vector<int>&path,int visited[],int check[]){
         
       visited[u]=1;
       path[u]=1;
@@ -50,7 +51,6 @@ class Solution {
        return ans;
     }
 };
-
 
 
 //{ Driver Code Starts.
