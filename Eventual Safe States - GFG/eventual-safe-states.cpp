@@ -10,7 +10,7 @@ using namespace std;
 
 class Solution {
   public:
-     bool dfs(int u,int V,vector<int>adj[],vector<int>&path,int visited[],int check[]){
+   bool dfs(int u,int V,vector<int>adj[],vector<int>&path,int visited[],int check[]){
         
       visited[u]=1;
       path[u]=1;
