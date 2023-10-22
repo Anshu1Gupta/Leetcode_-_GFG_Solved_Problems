@@ -8,7 +8,8 @@ class Solution{
 
 	public:
 	int maxSumIS(int arr[], int n)  
-	{
+	{  
+	    // Your code goes 
 	    int maxi=-1;
 	    vector<int>dp(n+1,0);
 	    
@@ -26,7 +27,6 @@ class Solution{
 	       //cout<<maxi<<endl;
 	   }
 	   return maxi;
-	    // Your code goes here
 	}  
 };
 
