@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution{
 public:
-bool isPallindrome(string &str){
+    bool isPallindrome(string &str){
     int low=0;
     int high=str.size()-1;
     
