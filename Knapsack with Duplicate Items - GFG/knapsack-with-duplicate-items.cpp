@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution{
 public:
-  int maximum(int ind,int weight,int val[],int wt[],vector<vector<int>>&dp,int size){
+   int maximum(int ind,int weight,int val[],int wt[],vector<vector<int>>&dp,int size){
       if(ind>=size)return 0;
       
       if(dp[ind][weight]!=-1)return dp[ind][weight];
