@@ -8,7 +8,7 @@ class Solution
   public:
     int minOperation(int n)
     {
-       int count= 0;
+     int count= 0;
        while(n>0){
            if (n%2==1){
                n=n-1;
@@ -22,8 +22,8 @@ class Solution
            
        }
        return count;
-    
     }
+    
 };
 
 //{ Driver Code Starts.
