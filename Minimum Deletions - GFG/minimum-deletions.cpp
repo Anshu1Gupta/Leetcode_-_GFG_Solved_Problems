@@ -8,8 +8,7 @@ using namespace std;
 
 class Solution{
   public:
-  
-  int minDelete(int ind1,int ind2, string &str1,string &str2,vector<vector<int>>&dp){
+    int minDelete(int ind1,int ind2, string &str1,string &str2,vector<vector<int>>&dp){
       if(ind1>=str1.size()||ind2>=str2.size())return 0;
       
       if(dp[ind1][ind2]!=-1)return dp[ind1][ind2];
@@ -25,7 +24,6 @@ class Solution{
       return dp[ind1][ind2]=max(take,ntake);
   }
     int minimumNumberOfDeletions(string S) { 
-        // code here
         string str1=S;
         string str2=S;
         int n=str2.size();
