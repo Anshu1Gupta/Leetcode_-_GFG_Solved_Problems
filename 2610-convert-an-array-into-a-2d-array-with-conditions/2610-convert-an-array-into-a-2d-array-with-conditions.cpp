@@ -13,10 +13,10 @@ public:
         while(size--){
             vector<int>small;
             
-            for(auto it:mp){
+            for(auto &it:mp){
                 if(it.second!=0){
                     small.push_back(it.first);
-                    mp[it.first]--;
+                    it.second--;
                 }
             }
             ans.push_back(small);
