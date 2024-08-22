@@ -10,27 +10,48 @@
  */
 class Solution {
 public:
-    ListNode* merge(ListNode*first,ListNode*second){
+    ListNode*merge(ListNode*left,ListNode*right){
+        ListNode*node=NULL,*nodeTail=NULL;
         
-        ListNode*dummy=new ListNode(-1);
-        ListNode*ans=dummy;
-        while(first!=NULL&&second!=NULL){
-            if(first->val<=second->val){
-                dummy->next=first;
-                dummy=dummy->next;
-                first=first->next;
+        if(left->val<right->val){
+            node=left;
+            nodeTail=node;
+            left=left->next;
+            
+        }
+        else{
+            node=right;
+            nodeTail=node;
+            right=right->next;
+        }
+        
+        
+        while(left&&right){
+            if(left->val<right->val){
+                node->next=left;
+                node=left;
+                left=left->next;
             }
             else{
-                dummy->next=second;
-                dummy=dummy->next;
-                second=second->next;
+                node->next=right;
+                node=right;
+                right=right->next;
+                
             }
         }
-        dummy->next=first!=NULL?first:second;
-        return ans->next;
+        
+        if(left){
+            node->next=left;
+            node=node->next;
+        }
+        if(right){
+            node->next=right;
+            node=node->next;
+        }
+        
+        return nodeTail;
     }
-    // I will use merge sort
-    ListNode*findMid(ListNode*head){
+    ListNode* midFind(ListNode* head){
         if(head==NULL)return NULL;
         ListNode*slow=head;
         ListNode*fast=head->next;
@@ -43,16 +64,17 @@ public:
         slow->next=NULL;
         return mid;
     }
-  
-    ListNode* sortList(ListNode* head) {
-        if(head==NULL||head->next==NULL)return head;
+    ListNode* mergeSort(ListNode* node){
+        if(node==NULL || node->next ==NULL)return node;
         
-        ListNode*mid=findMid(head);
+        ListNode*mid=midFind(node);
+        ListNode* left=mergeSort(node);
+        ListNode* right=mergeSort(mid);
         
-        
-       ListNode*left=sortList(head);
-       ListNode*right=sortList(mid);
-        
-      return  merge(left,right);
+        return merge(left, right);
+    }
+    ListNode* sortList(ListNode* head) {        
+        return mergeSort(head);
+
     }
 };
