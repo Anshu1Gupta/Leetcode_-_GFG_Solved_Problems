@@ -1,26 +1,22 @@
 class Solution {
 public:
-    void findAll(int ind,vector<int>&nums,set<vector<int>>&ans,vector<int>&temp){
-        if(ind>=nums.size()){
-            ans.insert(temp);
-            return;
-        }
-        
-        temp.push_back(nums[ind]);
-        findAll(ind+1,nums,ans,temp);
-        temp.pop_back();
-        findAll(ind+1,nums,ans,temp);
-        
+void findSet(int ind,vector<int>&temp,vector<vector<int>>&ans,vector<int>&arr){
+    if(ind>=arr.size()){
+        ans.push_back(temp);
+        return;
     }
-    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        set<vector<int>>ans;
-        vector<vector<int>>res;
-        vector<int>temp;
-        findAll(0,nums,ans,temp);
-        for(auto it:ans){
-            res.push_back(it);
-        }
-        return res;
+
+    temp.push_back(arr[ind]);
+    findSet(ind+1,temp,ans,arr);
+    temp.pop_back();
+    while(ind+1<arr.size()&&arr[ind+1]==arr[ind])ind++;
+    findSet(ind+1,temp,ans,arr);
+}
+    vector<vector<int>> subsetsWithDup(vector<int>& arr) {
+    sort(arr.begin(),arr.end());
+    vector<vector<int>>ans;
+    vector<int>temp;
+    findSet(0,temp,ans,arr);
+    return ans;
     }
 };
