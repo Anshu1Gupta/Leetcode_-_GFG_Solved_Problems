@@ -1,27 +1,26 @@
 class Solution {
 public:
-    void finSets(int ind,vector<int>&nums,vector<int>&temp,set<vector<int>>&ans){
+    void findAll(int ind,vector<int>&nums,set<vector<int>>&ans,vector<int>&temp){
         if(ind>=nums.size()){
             ans.insert(temp);
             return;
         }
         
         temp.push_back(nums[ind]);
-        finSets(ind+1,nums,temp,ans);
+        findAll(ind+1,nums,ans,temp);
         temp.pop_back();
-        finSets(ind+1,nums,temp,ans);
+        findAll(ind+1,nums,ans,temp);
         
     }
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
         sort(nums.begin(),nums.end());
-        vector<int>temp;
         set<vector<int>>ans;
-        vector<vector<int>>result;
-        finSets(0,nums,temp,ans);
-        
+        vector<vector<int>>res;
+        vector<int>temp;
+        findAll(0,nums,ans,temp);
         for(auto it:ans){
-            result.push_back(it);
+            res.push_back(it);
         }
-        return result;
+        return res;
     }
 };
